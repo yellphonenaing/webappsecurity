@@ -67,3 +67,23 @@ display_errors=off;";
 
 }
 ```
+> PHP-FPM configuration files are stored in /etc/php/8.2/fpm/pool.d/
+
+>webrunner.conf
+
+```
+[webrunner]
+listen = 127.0.0.1:9834
+user = webrunner
+group = webrunner
+listen.allowed_clients = 127.0.0.1
+pm = ondemand
+pm.max_children = 250
+pm.process_idle_timeout = 10s
+pm.max_requests = 100
+listen.backlog = 65535
+pm.status_path = /status
+request_terminate_timeout = 7200s
+rlimit_files = 131072
+rlimit_core = unlimited
+```
