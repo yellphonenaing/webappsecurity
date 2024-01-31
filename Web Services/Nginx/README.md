@@ -7,7 +7,7 @@ sudo systemctl restart nginx
 sudo apt install php8.2-fpm
 sudo systemctl restart nginx
 ```
-> Visit your web with http://127.0.0.1
+> Visit at http://127.0.0.1
 
 > Nginx configuration files are stored in /etc/nginx
 
