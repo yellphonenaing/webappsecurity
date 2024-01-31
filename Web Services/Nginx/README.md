@@ -107,3 +107,28 @@ location / {
     }
 }
 ```
+
+**Nginx Load Balancer Basic Configuration**
+```
+upstream backend {
+    server 127.0.0.1:8008;
+    server 127.0.0.1:8009
+    server 127.0.0.1:8010
+}
+server {
+        listen 80;
+        listen [::]:80;
+
+        root /var/www/html;
+
+        server_name localhost;
+location / {
+        proxy_pass http://backend;
+        proxy_set_header X-Real-IP  $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto http;
+        proxy_set_header X-Forwarded-Port 80;
+        proxy_set_header Host $host;
+    }
+}
+```
