@@ -11,8 +11,8 @@ sudo systemctl restart nginx
 **Basic Nginx Site Configuration**
 ```
 server {
-        listen 80 default_server;
-        listen [::]:80 default_server;
+        listen 80;
+        listen [::]:80;
 
         root /var/www/html;
 
