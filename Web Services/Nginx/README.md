@@ -6,6 +6,7 @@ sudo apt install nginx -y
 sudo systemctl restart nginx
 ```
 > Visit your web with http://127.0.0.1
+
 > Nginx configuration files are stored in /etc/nginx
 
 **Basic Nginx Site Configuration**
