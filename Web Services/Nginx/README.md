@@ -87,3 +87,23 @@ request_terminate_timeout = 7200s
 rlimit_files = 131072
 rlimit_core = unlimited
 ```
+
+**Nginx Reverse Proxy Basic Configuration**
+```
+server {
+        listen 80;
+        listen [::]:80;
+
+        root /var/www/html;
+
+        server_name localhost;
+location / {
+        proxy_pass http://localhost:8080;
+        proxy_set_header X-Real-IP  $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto http;
+        proxy_set_header X-Forwarded-Port 80;
+        proxy_set_header Host $host;
+    }
+}
+```
