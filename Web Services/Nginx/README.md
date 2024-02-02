@@ -111,9 +111,9 @@ location / {
 **Nginx Load Balancer Basic Configuration**
 ```
 upstream backend {
-    server 127.0.0.1:8008;
-    server 127.0.0.1:8009
-    server 127.0.0.1:8010
+    server server1:8080;
+    server server2:8080;
+    server server3:8080;
 }
 server {
         listen 80;
