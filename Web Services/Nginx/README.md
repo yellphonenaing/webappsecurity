@@ -5,7 +5,7 @@
 sudo apt install nginx -y
 sudo systemctl restart nginx
 sudo apt install php8.2-fpm
-sudo systemctl restart nginx
+sudo systemctl restart php8.2-fpm
 ```
 > Visit at http://127.0.0.1
 
