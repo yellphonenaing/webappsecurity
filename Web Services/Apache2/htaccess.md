@@ -111,6 +111,31 @@ AddType application/pdf .pdf
 AddType audio/mp3 .mp3
 ```
 
+## 9. Virtual Routing
+
+Virtual routing can help make URLs more user-friendly by creating clean URLs that map to specific internal file paths.
+
+### Example: Clean URLs for PHP Files
+Redirects requests for `/about` to `/about.php` without requiring the `.php` extension in the URL.
+```apache
+RewriteEngine On
+RewriteRule ^about$ about.php [L]
+```
+
+### Example: Dynamic Parameter-Based Routing
+Redirects a URL with a dynamic parameter, such as `/user/123`, to `/user.php?id=123`.
+```apache
+RewriteEngine On
+RewriteRule ^user/([0-9]+)$ user.php?id=$1 [L]
+```
+
+### Example: Multi-Parameter Routing
+Route multiple parameters by mapping URLs like `/product/123/blue` to `/product.php?id=123&color=blue`.
+```apache
+RewriteEngine On
+RewriteRule ^product/([0-9]+)/([a-zA-Z]+)$ product.php?id=$1&color=$2 [L]
+```
+
 ---
 
-This `.htaccess` file guide includes basic examples and configurations to help control access, redirect URLs, and improve site performance on Apache servers.
+This `.htaccess` file guide includes basic examples and configurations to help control access, redirect URLs, improve site performance, and implement virtual routing on Apache servers.
