@@ -23,7 +23,7 @@ function check_middle($password){
     return "Try again.\n";
 }
 function check_numbers($password){
-    if(mb_substr($password,1,1) == ((0.7+0.8)*4) && mb_substr($password,3,1) == ((mb_substr($password,1,1)%2)+2.5+5.2+1)-(0.3*9)){
+    if(check_begin_end($password) && mb_substr($password,1,1) == ((0.7+0.8)*4) && mb_substr($password,3,1) == ((mb_substr($password,1,1)%2)+2.5+5.2+1)-(0.3*9)){
         check_at($password);
     }
     return "Try again.\n";
